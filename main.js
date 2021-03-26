@@ -33,11 +33,11 @@ function upload_background(){
     ctx.drawImage(background_img, 0, 0, canvas.width, canvas.height);
 }
 
-function upload_car(){
+function upload_car1(){
     ctx.drawImage(car1_img, car_x, car_y, car_width, car_height);
 }
 
-function upload_car(){
+function upload_car2(){
     ctx.drawImage(car2_img, car2_x, car2_y, car2_width, car2_height);
 }
 
@@ -45,7 +45,7 @@ window.addEventListener("keydown", my_keydown);
 
 function my_keydown(e){
 key_pressed=e.keyCode;
-
+console.log(key_pressed);
 if (key_pressed=="38"){
     up();
 }
@@ -59,16 +59,16 @@ if (key_pressed=="39"){
     right();
 }
 
-if (key_pressed=="38"){
+if (key_pressed=="87"){
     w();
 }
-if (key_pressed=="40"){
+if (key_pressed=="83"){
     s();
 }
-if (key_pressed=="37"){
+if (key_pressed=="65"){
     a();
 }
-if (key_pressed=="39"){
+if (key_pressed=="68"){
     d();
 }
 }
@@ -79,6 +79,7 @@ function up(){
         car_y= car_y-10;
         upload_background();
         upload_car1();
+        upload_car2();
 
 
 
@@ -91,6 +92,7 @@ if(car_y<=500){
     car_y= car_y+10;
     upload_background();
     upload_car1();
+    upload_car2();
 }
 
 }
@@ -101,6 +103,7 @@ function left(){
     car_x= car_x-10;
     upload_background();
     upload_car1();
+    upload_car2();
 }
 }
 
@@ -109,6 +112,7 @@ function right(){
 car_x= car_x+10;
 upload_background();
 upload_car1();
+upload_car2();
     }
 }
 
@@ -120,6 +124,7 @@ function w(){
     if(car2_y>=0){
         car2_y= car2_y-10;
         upload_background();
+        upload_car1();
         upload_car2();
 
 
@@ -132,6 +137,7 @@ function s(){
 if(car2_y<=500){
     car2_y= car2_y+10;
     upload_background();
+    upload_car1();
     upload_car2();
 }
 
@@ -142,6 +148,7 @@ function a(){
 { 
     car2_x= car2_x-10;
     upload_background();
+    upload_car1();
     upload_car2();
 }
 }
@@ -150,6 +157,7 @@ function d(){
     if(car2_x<=600){
 car2_x= car2_x+10;
 upload_background();
+upload_car1();
 upload_car2();
     }
 }
